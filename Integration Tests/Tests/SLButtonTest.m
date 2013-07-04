@@ -44,4 +44,14 @@
                  @"SLButton should have matched a UIView with UIAccessibilityButtonTrait.");
 }
 
+- (void)testButtonsInTabBarsAreValidAndVisible {
+    SLButton *favorites = [SLButton elementWithAccessibilityLabel:@"Favorites"];
+    SLAssertTrue([UIAElement(favorites) isValidAndVisible], @"Favorites button should be valid and visible in the tab bar");
+}
+
+- (void)testButtonsInTabBarsAreTappable {
+    SLButton *favorites = [SLButton elementWithAccessibilityLabel:@"Favorites"];
+    SLAssertTrue([UIAElement(favorites) isTappable], @"Favorites button should be tappable in the tab bar.");
+}
+
 @end
