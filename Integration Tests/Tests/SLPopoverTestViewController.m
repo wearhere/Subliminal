@@ -24,7 +24,7 @@
 
 #import <Subliminal/SLTestController+AppHooks.h>
 
-@interface SLPopoverTestViewController : SLTestCaseViewController
+@interface SLPopoverTestViewController : SLTestCaseViewController <UIActionSheetDelegate>
 
 @end
 
@@ -60,6 +60,7 @@
     self = [super initWithTestCaseWithSelector:testCase];
     if (self) {
         [[SLTestController sharedTestController] registerTarget:self forAction:@selector(showPopover)];
+        [[SLTestController sharedTestController] registerTarget:self forAction:@selector(showPopoverWithActionSheet)];
     }
     return self;
 }
@@ -83,12 +84,28 @@
     [[SLTestController sharedTestController] registerTarget:self forAction:@selector(hidePopover)];
 }
 
+- (void)showPopoverWithActionSheet {
+    SLPopoverTestViewController *contentViewController = [[SLPopoverTestViewController alloc] initWithTestCaseWithSelector:self.testCase];
+
+    _popoverController = [[UIPopoverController alloc] initWithContentViewController:contentViewController];
+    _popoverController.popoverContentSize = CGSizeMake(320.0f, 480.0f);
+    [_popoverController presentPopoverFromRect:_label.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:NO];
+
+    UIActionSheet *testSheet = [[UIActionSheet alloc] initWithTitle:@"Test Sheet" delegate:self cancelButtonTitle:@"Popover Cancel" destructiveButtonTitle:@"Destruct" otherButtonTitles:@"Other", nil];
+    testSheet.delegate = self;
+    [testSheet showInView:_popoverController.contentViewController.view];
+}
+
 - (NSNumber *)isPopoverVisible {
     return @([_popoverController isPopoverVisible]);
 }
 
 - (void)hidePopover {
     [_popoverController dismissPopoverAnimated:NO];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"buttonIndex: %d", buttonIndex);
 }
 
 @end

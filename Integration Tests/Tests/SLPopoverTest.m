@@ -23,11 +23,11 @@
 #import "SLIntegrationTest.h"
 
 // Popovers are only supported on the iPad.
-@interface SLPopoverTest_iPad : SLIntegrationTest
+@interface focus_SLPopoverTest_iPad : SLIntegrationTest
 
 @end
 
-@implementation SLPopoverTest_iPad
+@implementation focus_SLPopoverTest_iPad
 
 + (NSString *)testCaseViewControllerClassName {
     return @"SLPopoverTestViewController";
@@ -62,6 +62,14 @@
     SLAssertTrueWithTimeout(SLAskAppYesNo(isPopoverVisible), 2.0, @"Popover should have become visible.");
     [UIAElement([SLPopover currentPopover]) dismiss];
     SLAssertFalse(SLAskAppYesNo(isPopoverVisible), @"Popover should have been dismissed.");
+}
+
+- (void)testActionSheetInPopover {
+    SLAskApp(showPopoverWithActionSheet);
+
+    SLButton *cancelButton = [SLButton elementWithAccessibilityLabel:@"Popover Cancel"];
+    SLAssertTrue([cancelButton isValidAndVisible], @"Cancel button should be valid and visible");
+    [UIAElement(cancelButton) tap];
 }
 
 @end
