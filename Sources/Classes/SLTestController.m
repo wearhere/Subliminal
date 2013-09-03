@@ -251,6 +251,13 @@ static SLTestController *__sharedController = nil;
 
         [self _beginTesting];
 
+        NSUInteger numTestCasesExpectedToExecute = 0;
+        for (Class testClass in _testsToRun) {
+            numTestCasesExpectedToExecute += [[testClass testCasesToRun] count];
+        }
+        SLLog(@"Expecting %u test cases to execute", numTestCasesExpectedToExecute);
+
+        NSMutableSet *testsActuallyRun = [[NSMutableSet alloc] initWithCapacity:[_testsToRun count]];
         for (Class testClass in _testsToRun) {
             @autoreleasepool {
                 _currentTest = (SLTest *)[[testClass alloc] init];
@@ -275,7 +282,14 @@ static SLTestController *__sharedController = nil;
                 }
                 _numTestsExecuted++;
 
+                [testsActuallyRun addObject:testClass];
                 _currentTest = nil;
+            }
+        }
+
+        for (Class testClass in _testsToRun) {
+            if (![testsActuallyRun containsObject:testClass]) {
+                SLLog(@"Test suite %@ did not run (so %u test cases did not run)", testClass, [[testClass testCasesToRun] count]);
             }
         }
 
