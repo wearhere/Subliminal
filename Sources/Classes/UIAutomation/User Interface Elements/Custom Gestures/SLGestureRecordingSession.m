@@ -174,7 +174,7 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
     NSAssert([NSThread isMainThread], @"Gesture recording must stop on the main thread.");
 
     self.state = SLGestureRecordingSessionStateFinished;
-    [_recorder setRecording:NO];
+    [self stopRecording];
     _recorder = nil;
     
     [_elementHighlightView removeFromSuperview];
@@ -296,17 +296,18 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
 }
 
 - (void)stop:(id)sender {
-    [_recorder setRecording:NO];
+    [self stopRecording];
 
     self.state = SLGestureRecordingSessionStateReady;
 }
 
-- (BOOL)gestureRecorder:(SLGestureRecorder *)recorder shouldReceiveTouch:(UITouch *)touch {
-    return ![touch.view isDescendantOfView:_toolbar];
+- (void)stopRecording {
+    [_recorder setRecording:NO];
+    self.recordedGesture = [_recorder.recordedGesture copy];
 }
 
-- (void)gestureRecorder:(SLGestureRecorder *)recorder didRecordGesture:(SLGesture *)gesture {
-    self.recordedGesture = gesture;
+- (BOOL)gestureRecorder:(SLGestureRecorder *)recorder shouldReceiveTouch:(UITouch *)touch {
+    return ![touch.view isDescendantOfView:_toolbar];
 }
 
 @end
