@@ -38,7 +38,9 @@ static const CGFloat kHandleWidth = 10.0f;
 @implementation SLGestureRecordingToolbar {
     SLRecordingToolbarRecordItem *_recordButtonItem;
     SLRecordingToolbarStopItem *_stopButtonItem;
-    UIBarButtonItem *_recordingAndDoneSpacerItem;
+    UIBarButtonItem *_leftHandleSpacerItem, *_recordingAndDoneSpacerItem, *_rightHandleSpacerItem;
+
+    UIPanGestureRecognizer *_dragRecognizer;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -54,6 +56,8 @@ static const CGFloat kHandleWidth = 10.0f;
         self.layer.borderWidth = 1.0f;
         self.layer.borderColor = [UIColor whiteColor].CGColor;
 
+        _leftHandleSpacerItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
+
         _playButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:nil action:NULL];
         _recordButtonItem = [SLRecordingToolbarRecordItem item];
         _stopButtonItem = [SLRecordingToolbarStopItem item];
@@ -61,7 +65,15 @@ static const CGFloat kHandleWidth = 10.0f;
         _recordingAndDoneSpacerItem.width = 20.0f;
         _doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:NULL];
 
+        _rightHandleSpacerItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
+
         [self updateItems];
+
+        _dragRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(drag:)];
+        // see comment above `-gestureRecognizer:shouldReceiveTouch:`
+        _dragRecognizer.delaysTouchesBegan = YES;
+        _dragRecognizer.delegate = self;
+        [self addGestureRecognizer:_dragRecognizer];
     }
     return self;
 }
@@ -76,7 +88,7 @@ static const CGFloat kHandleWidth = 10.0f;
 
 - (void)updateItems {
     UIBarButtonItem *middleItem = (self.showsRecordButton ? self.recordButtonItem : self.stopButtonItem);
-    [self setItems:@[ self.playButtonItem, middleItem, _recordingAndDoneSpacerItem, self.doneButtonItem ]];
+    [self setItems:@[ _leftHandleSpacerItem, self.playButtonItem, middleItem, _recordingAndDoneSpacerItem, self.doneButtonItem, _rightHandleSpacerItem ]];
 }
 
 - (void)setShowsRecordButton:(BOOL)showsRecordButton {
@@ -91,8 +103,49 @@ static const CGFloat kHandleWidth = 10.0f;
 
 - (CGSize)sizeThatFits:(CGSize)size {
     CGSize sizeThatFits = [super sizeThatFits:size];
-    sizeThatFits.width = 160.0f;
+    sizeThatFits.width = 200.0f;
     return sizeThatFits;
+}
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+
+    // draw handles (by filling their inner space clear) at the left and right of the toolbar
+    // (occupied by the left and right handle spacer items)
+    CGRect leftHandleSpace, rightHandleSpace;
+    CGRect innerSpace = CGRectInset(self.bounds, kHandleBarDiameter, kHandleBarDiameter);
+    [[UIColor clearColor] setFill];
+
+    CGRectDivide(innerSpace, &leftHandleSpace, &innerSpace, kHandleWidth, CGRectMinXEdge);
+    UIRectFill(leftHandleSpace);
+
+    CGRectDivide(innerSpace, &rightHandleSpace, &innerSpace, kHandleWidth, CGRectMaxXEdge);
+    UIRectFill(rightHandleSpace);
+}
+
+#pragma mark - Dragging
+
+// the "Done" button has some crazy wide hit-testing
+// which we override by setting `_dragRecognizer.delaysTouchesBegan = YES` above
+// and then re-implement in a saner way below
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    BOOL gestureRecognizerShouldReceiveTouch = YES;
+    for (UIView *view in self.subviews) {
+        // prevent the toolbar drag recognizer from receiving touches inside the toolbar button items
+        if ([view isKindOfClass:[UIControl class]] &&
+            CGRectContainsPoint(view.bounds, [touch locationInView:view])) {
+            gestureRecognizerShouldReceiveTouch = NO;
+            break;
+        }
+    }
+    return gestureRecognizerShouldReceiveTouch;
+}
+
+- (void)drag:(UIPanGestureRecognizer *)gestureRecognizer {
+    UIView *superview = self.superview;
+    CGPoint translation = [gestureRecognizer translationInView:superview];
+    self.frame = CGRectOffset(self.frame, translation.x, translation.y);
+    [gestureRecognizer setTranslation:CGPointZero inView:superview];
 }
 
 @end
