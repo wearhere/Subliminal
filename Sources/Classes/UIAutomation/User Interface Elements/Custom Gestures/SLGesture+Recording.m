@@ -10,8 +10,8 @@
 
 @implementation SLTouchState (Recording)
 
-+ (instancetype)stateAtTime:(NSTimeInterval)time withUITouches:(NSSet *)touches rect:(CGRect)rect {
-    NSMutableSet *slTouches = [[NSMutableSet alloc] initWithCapacity:[touches count]];
++ (instancetype)stateAtTime:(NSTimeInterval)time withUITouches:(NSArray *)touches rect:(CGRect)rect {
+    NSMutableArray *slTouches = [[NSMutableArray alloc] initWithCapacity:[touches count]];
     for (UITouch *touch in touches) {
         [slTouches addObject:[SLTouch touchWithUITouch:touch rect:rect]];
     }

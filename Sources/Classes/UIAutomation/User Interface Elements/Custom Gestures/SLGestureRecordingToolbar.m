@@ -8,6 +8,8 @@
 
 #import "SLGestureRecordingToolbar.h"
 
+#import "SLLogger.h"
+
 #import <QuartzCore/QuartzCore.h>
 
 // `UIBarButtonItem` to display a "record" image,
@@ -151,14 +153,20 @@ static const CGFloat kHandleWidth = 10.0f;
 @end
 
 
-@implementation SLRecordingToolbarRecordItem
+@implementation SLRecordingToolbarRecordItem {
+    UIButton *_button;
+}
+
++ (UIColor *)buttonColor:(BOOL)enabled {
+    return (enabled ? [UIColor redColor] : [UIColor darkGrayColor]);
+}
 
 // displays a red circle
 + (instancetype)item {
     UIButton *recordButton = [UIButton buttonWithType:UIButtonTypeCustom];
     // height chosen to match that of the system items
     recordButton.frame = (CGRect){ .size = CGSizeMake(19.0f, 19.0f) };
-    recordButton.backgroundColor = [UIColor redColor];
+    recordButton.backgroundColor = [[self class] buttonColor:YES];
     recordButton.layer.cornerRadius = CGRectGetHeight(recordButton.frame) / 2.0f;
     recordButton.showsTouchWhenHighlighted = YES;   // to match the behavior of the system "play" item
 
@@ -167,21 +175,35 @@ static const CGFloat kHandleWidth = 10.0f;
         // an item initialized with a custom view does not call its target's action method,
         // so we must invoke it manually
         [recordButton addTarget:item action:@selector(record:) forControlEvents:UIControlEventTouchUpInside];
+        item->_button = recordButton;
     }
     return item;
 }
 
 - (void)record:(id)sender {
+    if (!self.enabled) return;
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     [self.target performSelector:self.action withObject:self];
 #pragma clang diagnostic pop
 }
 
+- (void)setEnabled:(BOOL)enabled {
+    [super setEnabled:enabled];
+
+    // because we draw the button ourselves, we must change its background color
+    _button.backgroundColor = [[self class] buttonColor:enabled];
+}
+
 @end
 
 @implementation SLRecordingToolbarStopItem {
     UIButton *_button;
+}
+
++ (UIColor *)buttonColor:(BOOL)enabled {
+    return (enabled ? [UIColor whiteColor] : [UIColor darkGrayColor]);
 }
 
 // displays a white/red pulsing square
@@ -224,10 +246,19 @@ static const CGFloat kHandleWidth = 10.0f;
 }
 
 - (void)stop:(id)sender {
+    if (!self.enabled) return;
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     [self.target performSelector:self.action withObject:self];
 #pragma clang diagnostic pop
+}
+
+- (void)setEnabled:(BOOL)enabled {
+    [super setEnabled:enabled];
+
+    // because we draw the button ourselves, we must change its background color
+    _button.backgroundColor = [[self class] buttonColor:enabled];
 }
 
 @end

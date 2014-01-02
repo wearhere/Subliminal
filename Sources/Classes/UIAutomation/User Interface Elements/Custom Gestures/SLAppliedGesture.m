@@ -21,7 +21,7 @@
         for (SLTouchStateSequence *stateSequence in gesture.stateSequences) {
             NSMutableArray *states = [[NSMutableArray alloc] initWithCapacity:[stateSequence.states count]];
             for (SLTouchState *state in stateSequence.states) {
-                NSMutableSet *touches = [[NSMutableSet alloc] initWithCapacity:[state.touches count]];
+                NSMutableArray *touches = [[NSMutableArray alloc] initWithCapacity:[state.touches count]];
                 for (SLTouch *touch in state.touches) {
                     CGPoint point = [touch locationInRect:rect];
                     [touches addObject:[SLAppliedTouch touchAtPoint:point]];
@@ -55,7 +55,7 @@
 
 @implementation SLAppliedTouchState
 
-+ (instancetype)stateAtTime:(NSTimeInterval)time withTouches:(NSSet *)touches {
++ (instancetype)stateAtTime:(NSTimeInterval)time withTouches:(NSArray *)touches {
     SLAppliedTouchState *state = [[self alloc] init];
     state->_time = time;
     state->_touches = [touches copy];

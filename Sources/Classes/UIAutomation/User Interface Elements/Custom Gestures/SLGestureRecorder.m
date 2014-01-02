@@ -9,13 +9,17 @@
 #import "SLGestureRecorder.h"
 
 #import <UIKit/UIGestureRecognizerSubclass.h>
+#import <objc/runtime.h>
 
 #import "SLGesture.h"
 #import "SLGesture+Recording.h"
 
+static const NSUInteger kDefaultExpectedNumberOfTouches = 1;
+
 @interface SLGestureRecorderRecognizer : UIGestureRecognizer
 
 @property (nonatomic) CGRect rect;
+@property (nonatomic) NSUInteger expectedNumberOfTouches;
 @property (nonatomic, readonly, strong) SLGesture *gesture;
 
 - (instancetype)initWithTarget:(id)target action:(SEL)action rect:(CGRect)rect;
@@ -43,6 +47,8 @@
         _gestureRecognizer = [[SLGestureRecorderRecognizer alloc] initWithTarget:self
                                                                           action:@selector(didFinishRecognition:)
                                                                             rect:rect];
+        _gestureRecognizer.expectedNumberOfTouches = kDefaultExpectedNumberOfTouches;
+
         // in order to freely manipulate the app, the recognizer must not cancel nor delay touches
         _gestureRecognizer.cancelsTouchesInView = NO;
         _gestureRecognizer.delaysTouchesEnded = NO;
@@ -61,6 +67,13 @@
              @"%@ must be stopped before its observed rect can be changed.", self);
     _rect = rect;
     _gestureRecognizer.rect = _rect;
+}
+
+- (void)setExpectedNumberOfTouches:(NSUInteger)expectedNumberOfTouches {
+    NSAssert(![self isRecording],
+             @"%@ must be stopped before the number of touches it expects can be changed.", self);
+    _expectedNumberOfTouches = expectedNumberOfTouches;
+    _gestureRecognizer.expectedNumberOfTouches = _expectedNumberOfTouches;
 }
 
 - (void)setRecording:(BOOL)recording {
@@ -114,12 +127,15 @@
     NSDate *_gestureStartDate, *_touchSequenceStartDate;
     SLMutableGesture *_gesture;
     SLMutableTouchStateSequence *_currentStateSequence;
+    NSMutableArray *_currentTouches;
 }
 
 - (instancetype)initWithTarget:(id)target action:(SEL)action rect:(CGRect)rect {
     self = [self initWithTarget:target action:action];
     if (self) {
         _rect = rect;
+        _expectedNumberOfTouches = kDefaultExpectedNumberOfTouches;
+        _currentTouches = [[NSMutableArray alloc] init];
         [self reset];
     }
     return self;
@@ -135,36 +151,68 @@
 - (void)reset {
     _gestureStartDate = nil, _touchSequenceStartDate = nil;
     _gesture = [[SLMutableGesture alloc] init];
+    [_currentTouches removeAllObjects];
 }
 
 - (SLGesture *)gesture {
     return [_gesture copy];
 }
 
-- (void)recordTouches:(NSSet *)touches atDate:(NSDate *)date {
-    NSTimeInterval touchTime = [date timeIntervalSinceDate:_touchSequenceStartDate];
+- (void)recordTouches:(NSArray *)touches {
+    NSDate *touchDate = [NSDate date];
+
+    if (!_gestureStartDate) _gestureStartDate = touchDate;
+    if (!_currentStateSequence) {
+        _touchSequenceStartDate = touchDate;
+
+        NSTimeInterval sequenceTime = [touchDate timeIntervalSinceDate:_gestureStartDate];
+        _currentStateSequence = [[SLMutableTouchStateSequence alloc] initAtTime:sequenceTime];
+    }
+
+    NSTimeInterval touchTime = [touchDate timeIntervalSinceDate:_touchSequenceStartDate];
     [_currentStateSequence addState:[SLTouchState stateAtTime:touchTime withUITouches:touches rect:_rect]];
 }
 
+/*
+ NOTE: All touches (`_currentTouches`) are recorded at each state,
+ rather than just the touches that have been mutated (`touches`),
+ because UIAutomation must simulate the location of all touches involved
+ in a gesture at each touch state.
+ 
+ Also note that `_currentTouches`, being an array rather than a set like `touches`,
+ maintains a consistent order of touches between states.
+ */
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSDate *touchDate = [NSDate date];
-    if (!_gestureStartDate) _gestureStartDate = touchDate;
-    _touchSequenceStartDate = touchDate;
+    // only track and record these touches if we haven't already begun recording touches:
+    // UIAutomation can't simulate touches beginning at offset times
+    if ([_currentStateSequence.states count]) return;
 
-    NSTimeInterval touchTime = [touchDate timeIntervalSinceDate:_gestureStartDate];
-    _currentStateSequence = [[SLMutableTouchStateSequence alloc] initAtTime:touchTime];
+    [_currentTouches addObjectsFromArray:[touches allObjects]];
 
-    // record the first touch state as occurring exactly at the start of the sequence
-    [self recordTouches:touches atDate:touchDate];
+    // wait to record any touches until the expected number have begun
+    if ([_currentTouches count] < self.expectedNumberOfTouches) return;
+
+    [self recordTouches:_currentTouches];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self recordTouches:touches atDate:[NSDate date]];
+    // wait to record any touches until the expected number have begun
+    if ([_currentTouches count] < self.expectedNumberOfTouches) return;
+
+    [self recordTouches:_currentTouches];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self recordTouches:touches atDate:[NSDate date]];
+    // only record the touches if we are currently recording a sequence
+    // (we might not be recording here if a touch has begun and ended
+    // before the expected number of touches has begun)
+    if (!_currentStateSequence) return;
 
+    [self recordTouches:_currentTouches];
+
+    // when any touch ends, freeze the state sequence and cease tracking all touches:
+    // UIAutomation can't simulate touches ending at offset times
+    [_currentTouches removeAllObjects];
     [_gesture addStateSequence:_currentStateSequence];
     _currentStateSequence = nil;
 }

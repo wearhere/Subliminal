@@ -32,9 +32,9 @@
 @interface SLAppliedTouchState : NSObject
 
 @property (nonatomic, readonly) NSTimeInterval time;
-@property (nonatomic, strong, readonly) NSSet *touches;
+@property (nonatomic, strong, readonly) NSArray *touches;
 
-+ (instancetype)stateAtTime:(NSTimeInterval)time withTouches:(NSSet *)touches;
++ (instancetype)stateAtTime:(NSTimeInterval)time withTouches:(NSArray *)touches;
 
 @end
 

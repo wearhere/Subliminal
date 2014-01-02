@@ -12,7 +12,7 @@
 
 @interface SLTouchState (Recording)
 
-+ (instancetype)stateAtTime:(NSTimeInterval)time withUITouches:(NSSet *)touches rect:(CGRect)rect;
++ (instancetype)stateAtTime:(NSTimeInterval)time withUITouches:(NSArray *)touches rect:(CGRect)rect;
 
 @end
 

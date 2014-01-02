@@ -216,7 +216,7 @@ static const NSTimeInterval kMinimumStateInterval = 0.1;
 
 @implementation SLTouchState
 
-+ (instancetype)stateAtTime:(NSTimeInterval)time withTouches:(NSSet *)touches {
++ (instancetype)stateAtTime:(NSTimeInterval)time withTouches:(NSArray *)touches {
     SLTouchState *state = [[self alloc] init];
     state->_time = time;
     state->_touches = [touches copy];

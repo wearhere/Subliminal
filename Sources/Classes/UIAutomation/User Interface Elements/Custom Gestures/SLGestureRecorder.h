@@ -17,6 +17,7 @@
 
 /// may not be set while recording; must be set on the main thread
 @property (nonatomic) CGRect rect;
+@property (nonatomic) NSUInteger expectedNumberOfTouches;
 @property (nonatomic, getter = isRecording) BOOL recording;
 @property (nonatomic, strong, readonly) SLGesture *recordedGesture;
 

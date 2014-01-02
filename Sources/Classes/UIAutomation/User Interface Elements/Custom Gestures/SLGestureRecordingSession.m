@@ -17,6 +17,8 @@
 #import "SLCutoutMaskView.h"
 #import "SLGestureRecordingToolbar.h"
 
+static const NSUInteger kDefaultExpectedNumberOfTouches = 1;
+
 typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
     SLGestureRecordingSessionStateReady,
     SLGestureRecordingSessionStateRecordingPreflight,
@@ -55,6 +57,8 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
     if (self) {
         _element = element;
 
+        _expectedNumberOfTouches = kDefaultExpectedNumberOfTouches;
+
         _sessionSemaphore = dispatch_semaphore_create(0);
 
         _elementHighlightView = [[SLCutoutMaskView alloc] initWithFrame:CGRectZero];
@@ -92,6 +96,14 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
     if (_sessionSemaphore) dispatch_release(_sessionSemaphore);
 }
 
+- (void)setExpectedNumberOfTouches:(NSUInteger)expectedNumberOfTouches {
+    NSAssert(!_recorder,
+             @"The expected number of touches cannot be changed after the recording session has begun.");
+
+    _expectedNumberOfTouches = expectedNumberOfTouches;
+    // this setting will be propagated to the `_recorder` when it is initialized
+}
+
 - (SLGesture *)recordGesture {
     [self startSession];
 
@@ -105,6 +117,7 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
 
     dispatch_async(dispatch_get_main_queue(), ^{
         _recorder = [[SLGestureRecorder alloc] initWithRect:rect];
+        _recorder.expectedNumberOfTouches = self.expectedNumberOfTouches;
         _recorder.delegate = self;
 
         UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
