@@ -12,12 +12,9 @@
 @class SLGesture, SLUIAElement;
 @interface SLGestureRecordingSession : NSObject
 
-@property (nonatomic) NSUInteger expectedNumberOfTouches;
-
 + (SLGesture *)recordGestureWithElement:(SLUIAElement *)element;
 
-- (instancetype)initWithElement:(SLUIAElement *)element;
-
-- (SLGesture *)recordGesture;
++ (SLGesture *)recordGestureWithElement:(SLUIAElement *)element
+                expectedNumberOfTouches:(NSUInteger)expectedNumberOfTouches;
 
 @end

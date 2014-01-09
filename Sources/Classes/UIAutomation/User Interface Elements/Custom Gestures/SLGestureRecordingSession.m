@@ -36,6 +36,8 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
 
 @implementation SLGestureRecordingSession {
     SLUIAElement *_element;
+    NSUInteger _expectedNumberOfTouches;
+
     SLGestureRecorder *_recorder;
     // used to synchronize communication between the testing thread that starts the session
     // and the main thread that receives callbacks from the user interacting with the recording UI
@@ -49,15 +51,20 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
 @synthesize state = _state;
 
 + (SLGesture *)recordGestureWithElement:(SLUIAElement *)element {
-    return [[[self alloc] initWithElement:element] recordGesture];
+    return [self recordGestureWithElement:element expectedNumberOfTouches:kDefaultExpectedNumberOfTouches];
 }
 
-- (instancetype)initWithElement:(SLUIAElement *)element {
++ (SLGesture *)recordGestureWithElement:(SLUIAElement *)element expectedNumberOfTouches:(NSUInteger)expectedNumberOfTouches {
+    return [[[self alloc] initWithElement:element expectedNumberOfTouches:expectedNumberOfTouches] recordGesture];
+}
+
+- (instancetype)initWithElement:(SLUIAElement *)element
+        expectedNumberOfTouches:(NSUInteger)expectedNumberOfTouches {
     self = [super init];
     if (self) {
         _element = element;
 
-        _expectedNumberOfTouches = kDefaultExpectedNumberOfTouches;
+        _expectedNumberOfTouches = expectedNumberOfTouches;
 
         _sessionSemaphore = dispatch_semaphore_create(0);
 
@@ -117,7 +124,7 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
 
     dispatch_async(dispatch_get_main_queue(), ^{
         _recorder = [[SLGestureRecorder alloc] initWithRect:rect];
-        _recorder.expectedNumberOfTouches = self.expectedNumberOfTouches;
+        _recorder.expectedNumberOfTouches = _expectedNumberOfTouches;
         _recorder.delegate = self;
 
         UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
@@ -215,7 +222,7 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
 
 - (void)dismissHighlightView:(UITapGestureRecognizer *)recognizer {
     // nothing to do here--the view is dismissed in `gestureRecognizer:shouldReceiveTouch:`
-    // (see discussion in `-initWithElement:`
+    // (see discussion in `-initWithElement:`)
 }
 
 #pragma mark - Recording and Playback
@@ -225,7 +232,7 @@ typedef NS_ENUM(NSInteger, SLGestureRecordingSessionState) {
     @synchronized(self) {
         state = _state;
     }
-    return _state;
+    return state;
 }
 
 - (void)setState:(SLGestureRecordingSessionState)state {
