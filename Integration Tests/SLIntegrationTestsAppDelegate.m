@@ -28,6 +28,8 @@
 #import <Subliminal/SLTerminal.h>
 #import "SLTestController+Internal.h"
 
+#import <CoreLocation/CoreLocation.h>
+
 // If you wish to explore a particular test case view controller with UIAutomation attached,
 // to verify that it is configured properly for testing,
 // set DEBUG_TEST_CASE_VIEW_CONTROLLER to the view controller's class,
@@ -41,6 +43,8 @@
 @implementation SLIntegrationTestsAppDelegate {
     NSArray *_tests;
     NSString *_terminalStartupResult;
+
+    CLLocationManager *_locationManager;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -76,6 +80,9 @@
         // We can't block this method's return, so we verify the result after a delay.
         [self performSelector:@selector(verifyTerminalConnectionAndRunTests) withObject:nil afterDelay:0.1];
     }
+
+    _locationManager = [[CLLocationManager alloc] init];
+    [_locationManager startUpdatingLocation];
 
     return YES;
 }
