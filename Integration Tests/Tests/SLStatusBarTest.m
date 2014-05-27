@@ -25,21 +25,23 @@
 }
 
 - (void)testScrollToTop {
-    // Make sure the labels start out the way we expect (top is visible, bottom is not).
-    SLElement *topLabel = [SLElement elementWithAccessibilityLabel:@"Top"];
+    SLAssertTrue([SLAskApp(contentOffsetY) floatValue] == 0.0f,
+                 @"For the purposes of this test case, the scroll view should start at the top.");
+
+    // Use a label just to scroll down.
     SLElement *bottomLabel = [SLElement elementWithAccessibilityLabel:@"Bottom"];
-    SLAssertTrue([UIAElement(topLabel) isVisible], @"Top label should be visible at this point in the test.");
-    SLAssertFalse([UIAElement(bottomLabel) isVisible], @"Bottom label should not be visible at this point in the test.");
+    // Sanity check.
+    SLAssertFalse([UIAElement(bottomLabel) isVisible],
+                  @"Bottom label should be off the bottom of the screen.");
     
-    [bottomLabel scrollToVisible];
-    
-    SLAssertTrueWithTimeout([UIAElement(topLabel) isInvalidOrInvisible], 3.0, @"The top label failed to become invisible after scrolling.");
-    SLAssertTrueWithTimeout([UIAElement(bottomLabel) isValidAndVisible], 3.0, @"The bottom label failed to become visible after scrolling.");
+    [UIAElement(bottomLabel) scrollToVisible];
+    SLAssertTrue([SLAskApp(contentOffsetY) floatValue] > 0.0f,
+                 @"App should have scrolled down.");
+
     SLStatusBar *statusBar = [SLStatusBar statusBar];
     [UIAElement(statusBar) tap];
-    
-    SLAssertTrueWithTimeout([UIAElement(bottomLabel) isInvalidOrInvisible], 3.0, @"The bottom label failed to become invisible after scrolling.");
-    SLAssertTrueWithTimeout([UIAElement(topLabel) isValidAndVisible], 3.0, @"The top label failed to become visible after scrolling.");
+    SLAssertTrueWithTimeout([SLAskApp(contentOffsetY) floatValue] == 0.0f, 2.0,
+                            @"The app should have scrolled back to the top.");
 }
 
 
