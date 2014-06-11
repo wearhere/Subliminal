@@ -61,6 +61,7 @@
         // animate test transitions by default
         BOOL animateTestTransitions = YES;
         // but not we're running in CI
+        SLLogAsync(@"CI is %@", getenv("CI") ? @(getenv("CI")) : @"false");
         if (getenv("CI") && [@(getenv("CI")) isEqualToString:@"true"]) animateTestTransitions = NO;
         testsViewController.animateTestTransitions = animateTestTransitions;
 
