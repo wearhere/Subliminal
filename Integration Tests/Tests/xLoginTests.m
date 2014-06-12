@@ -21,7 +21,7 @@
 - (void)tearDownTest {
 }
 
-- (void)testCase2LogInUsingEmptyUsernameEmptyPassword {
+- (void)focus_testCase2LogInUsingEmptyUsernameEmptyPassword {
 
     [self wait:2.0];
     [[SLWindow mainWindow] logElementTree];

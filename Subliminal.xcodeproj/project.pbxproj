@@ -41,6 +41,7 @@
 		50F2B7C818E9C0D700F21635 /* SLDispatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F2B7C718E9C0D700F21635 /* SLDispatchTests.m */; };
 		50F3E18C1783A5CB00C6BD1B /* SLGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F3E18A1783A5CB00C6BD1B /* SLGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50F3E18E1783A60100C6BD1B /* SLGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F3E18B1783A5CB00C6BD1B /* SLGeometry.m */; };
+		608D9149194A259200C771B8 /* xLoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 608D9148194A259200C771B8 /* xLoginTests.m */; };
 		6256A2D419476E1F00C6507F /* SLStaticTextTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6256A2D119476E1F00C6507F /* SLStaticTextTest.m */; };
 		6256A2D519476E1F00C6507F /* SLStaticTextTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6256A2D219476E1F00C6507F /* SLStaticTextTestViewController.m */; };
 		6256A2D619476E1F00C6507F /* SLStaticTextTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6256A2D319476E1F00C6507F /* SLStaticTextTestViewController.xib */; };
@@ -279,6 +280,7 @@
 		50F2B7C718E9C0D700F21635 /* SLDispatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLDispatchTests.m; sourceTree = "<group>"; };
 		50F3E18A1783A5CB00C6BD1B /* SLGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLGeometry.h; sourceTree = "<group>"; };
 		50F3E18B1783A5CB00C6BD1B /* SLGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLGeometry.m; sourceTree = "<group>"; };
+		608D9148194A259200C771B8 /* xLoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xLoginTests.m; sourceTree = "<group>"; };
 		6256A2D119476E1F00C6507F /* SLStaticTextTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLStaticTextTest.m; sourceTree = "<group>"; };
 		6256A2D219476E1F00C6507F /* SLStaticTextTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLStaticTextTestViewController.m; sourceTree = "<group>"; };
 		6256A2D319476E1F00C6507F /* SLStaticTextTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLStaticTextTestViewController.xib; sourceTree = "<group>"; };
@@ -918,6 +920,7 @@
 		F0AC80BE16BB542400C5D5C0 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				608D9148194A259200C771B8 /* xLoginTests.m */,
 				DB2627D817B96704009DA3A6 /* SLStatusBar Tests */,
 				50A59BD317848CEE002A863A /* SLGeometry Tests */,
 				F07DA31F16E439B7004C2282 /* SLAlert Tests */,
@@ -1316,6 +1319,7 @@
 				62E7A634193EF84C00CB11AB /* SLStaticText.m in Sources */,
 				50F3E18E1783A60100C6BD1B /* SLGeometry.m in Sources */,
 				F0695DE4160138DF000B05D0 /* SLUIAElement.m in Sources */,
+				608D9149194A259200C771B8 /* xLoginTests.m in Sources */,
 				F0695DE5160138DF000B05D0 /* SLLogger.m in Sources */,
 				F0695DE7160138DF000B05D0 /* SLTerminal.m in Sources */,
 				F0695DE8160138DF000B05D0 /* SLTest.m in Sources */,
