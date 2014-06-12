@@ -1,0 +1,703 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E2882D08C14F6C94273477 /* SLWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C3E2D83270344C8B255CE8F /* SLWindow.h */; };
+		05EDE225022B4144997F019B /* SLTerminal.m in Sources */ = {isa = PBXBuildFile; fileRef = C88DE11F706C435A9FC39AEB /* SLTerminal.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		0701682E235147479CD19388 /* SLUIAElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6551BA8131C1479B944F1303 /* SLUIAElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		0712C5FD5239465BB20CC87A /* SLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC1712CB50E4F93A4D12115 /* SLElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		0BD289DD8C714CB890F5AFAD /* NSObject+SLAccessibilityHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 14043F2BA0BA4B8A95B45B9D /* NSObject+SLAccessibilityHierarchy.h */; };
+		0F883E75BA254A85B32D92B6 /* libPods-Integration Tests-Subliminal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A84BB8C6A5048018EF5E633 /* libPods-Integration Tests-Subliminal.a */; };
+		1698AFA154294E6EA95EEF97 /* SLMainThreadRef.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2929536D7D4EBCAB31D8D8 /* SLMainThreadRef.h */; };
+		21307BCACA614E5980BBC7A7 /* SLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0846E670294CB682544F39 /* SLLogger.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		274AD73797CC4C538FD7E539 /* SLSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A1BB6D58342DA9D1792B7 /* SLSwitch.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		2CCFD9E203554830B8DEBE73 /* SLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = E31DCFC6371B4505B820CC48 /* SLElement.h */; };
+		2EE06BFC382B404DB6D6D99C /* SLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD775D5163C4521BAF88856 /* SLTextField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		35C59D0B031D4966B8155046 /* NSObject+SLAccessibilityDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = C772D2980C5C4ABDB1FFF53F /* NSObject+SLAccessibilityDescription.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		3B292D3094C147DFA3230B31 /* Pods-Integration Tests-Subliminal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA0128185AE450695092593 /* Pods-Integration Tests-Subliminal-dummy.m */; };
+		3BF6732F47A34DA6AEE37F3D /* SLWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A94CA6FAF0F44AFABC8C041 /* SLWebView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		3D930BDF37E2420CA700660F /* SLAccessibilityPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 8330E786A3CD4B0891B2EC80 /* SLAccessibilityPath.h */; };
+		3E6162E842F04EAB87E7E9BC /* SLGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 222647DDB6324CC2A449A8F6 /* SLGeometry.h */; };
+		40EBA72D83764DF989217D8D /* SLTerminal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7753F79AC2204E588937FBB3 /* SLTerminal.h */; };
+		4487292B692A4062B712BCD5 /* SLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C828E3B8D0F140878FC45498 /* SLButton.h */; };
+		479C5B6D7BDC400FBE15DCB7 /* SLUIAElement.h in Headers */ = {isa = PBXBuildFile; fileRef = F07467C89A034971A5004432 /* SLUIAElement.h */; };
+		4BC3B96CBA6647D1B4D4371E /* SLStaticElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA12FCCF5ED4104A05420EF /* SLStaticElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		4D80C695590B4182A7D2D2DD /* SLTerminal+ConvenienceFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A1011D86D848668391A65C /* SLTerminal+ConvenienceFunctions.h */; };
+		5B1E30308952466284BEA0C5 /* SLAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = C35124EFC9A645FBB2ACDC06 /* SLAlert.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		5C234254C7EF4E71A4B10574 /* Subliminal.h in Headers */ = {isa = PBXBuildFile; fileRef = D993CCDF391F469DAF49D111 /* Subliminal.h */; };
+		5C71B978210F46FEAD13D35D /* SLGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F46AC71231461EA13E7102 /* SLGeometry.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		5F4685F503C3453BAEEBC040 /* UIScrollView+SLProgrammaticScrolling.h in Headers */ = {isa = PBXBuildFile; fileRef = B4B6A9452A744BBAB5C36B07 /* UIScrollView+SLProgrammaticScrolling.h */; };
+		61C08105709840AB8182E949 /* SLTestController+AppHooks.h in Headers */ = {isa = PBXBuildFile; fileRef = 928323C159AD4AC2A6ED8124 /* SLTestController+AppHooks.h */; };
+		66638CCDEDCB44D19729EEA6 /* SLStaticElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 050293304B864B629868D95E /* SLStaticElement.h */; };
+		68ACFB53AD3E429D9A47FEDC /* NSObject+SLVisibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DB493D8A14142AF7ABD12 /* NSObject+SLVisibility.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		6B1DC0A3928E483BA195E67E /* SLUIAElement+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 78CE9CE4BD7440C183D14445 /* SLUIAElement+Subclassing.h */; };
+		7C1F0323DDE24A5B8B8F6428 /* SLTest+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B4EFBD7C9564C7CADACCEBC /* SLTest+Internal.h */; };
+		8DB26B0D7A874036873D5E33 /* SLKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = E74A29E84DC941CD87F90483 /* SLKeyboard.h */; };
+		8F789BB8E9B44057B061D57A /* UIScrollView+SLProgrammaticScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = C8110BA9F486461D85872477 /* UIScrollView+SLProgrammaticScrolling.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		90A17C3183FC48D9ABDF2DB5 /* SLTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = BA9859AE5911420AAA89F4AA /* SLTextField.h */; };
+		969E523868EB4CF4B13CCC86 /* SLTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 37600F4C4C104BECB54B635B /* SLTest.h */; };
+		9A96E678BEA64FE7BC5CF9F6 /* SLKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9F68B629B4478874A62E5 /* SLKeyboard.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		9B32AD82DFD448C48A3E3B97 /* NSObject+SLAccessibilityDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 98A1C391E7FA430F803D2DF3 /* NSObject+SLAccessibilityDescription.h */; };
+		9CD3087DE1B448F69FBB7A2D /* SLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E05BB1166DDE464E9907A336 /* SLTextView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		9D654EE36F664070BF7A4DF0 /* SLAccessibilityPath.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7138B0B92447BCAA731D6B /* SLAccessibilityPath.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		9DF5DD7C38174A7E86F02620 /* SLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E40EB25AEE4A0A92F5F6EE /* SLDevice.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		A688EF30363C4F01B550FF75 /* SLTestController+AppHooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 55839C9BBEB64C9C8C91FC43 /* SLTestController+AppHooks.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		A8D564F1C18B42A2A7EA728B /* SLStatusBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BD1FF04761047DE9293E567 /* SLStatusBar.h */; };
+		A9973BA577DB4301B7BAFDCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B7C9E172EC4921A3C3B71D /* Foundation.framework */; };
+		B695924DF4864819BF7897B5 /* SLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10807B738F4B1F8D461D6D /* SLTest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		B9CF19180B1C4CDC851C81C4 /* NSObject+SLVisibility.h in Headers */ = {isa = PBXBuildFile; fileRef = AC76A831A3A94FD68797A18E /* NSObject+SLVisibility.h */; };
+		BB546CE98FDD4A269F3FC3BB /* SLWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E8F82742A4E76843D29AE /* SLWindow.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		BD7E176974AE4AAAA1C9A9E9 /* NSObject+SLAccessibilityHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = A12A65426805497A909BFF68 /* NSObject+SLAccessibilityHierarchy.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		BDC6E4B112534E3FA66DCD3C /* SLPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E0BFF296004512AE61E51A /* SLPopover.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		BE1CE662E627403C8ADAED84 /* SLMainThreadRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AFD3E9FBA84004968D2DD4 /* SLMainThreadRef.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		C038FE0D61DF451F90006362 /* SLStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C55FF11EC8F7476A94C0AF01 /* SLStatusBar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		C257C142AFDB42DEABEFECEF /* SLTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A05369BACA45F5B3D8DC44 /* SLTextView.h */; };
+		C8AC017BD5C5494FB1196058 /* SLTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = 88290867B20A48CFAC09666F /* SLTestController.h */; };
+		CA625FEBEF244CA1AA6C7AEB /* SLDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = E96CEEB91C8C4E2BA3BDA2F0 /* SLDevice.h */; };
+		DAAED3ED127F4F58811FCED1 /* SLAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8C38928B094F9E8BC020E0 /* SLAlert.h */; };
+		DC598E45E48B491880CA398F /* SLTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8982B3FA03FA460A949F30A4 /* SLTestController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		DE374006A8FC462692FF56BC /* SLStringUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2368764685864A3F9993A1B9 /* SLStringUtilities.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		E0DBE0ADE51D4F98AE3BEE23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B7C9E172EC4921A3C3B71D /* Foundation.framework */; };
+		E4808D26BAB14CADA0C809F2 /* SLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B64BCED0D9A4FD4AA9E792A /* SLLogger.h */; };
+		E4C3EA98480640C4AFE1208A /* SLWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 654CFBD1EFB74FF2AFF9A5E4 /* SLWebView.h */; };
+		E56EEB3E83044BE888FCBEF3 /* SLSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = C613BC0A7F234188B02EB2AE /* SLSwitch.h */; };
+		E8BE8285C0B24CD6A25FAA12 /* SLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E02A73C7AA418CAB2783C2 /* SLButton.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		E9A236AF527F42BFA63E1C31 /* SLStringUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 832BFD20D58A4192B0E2CA33 /* SLStringUtilities.h */; };
+		F308BD7CED7C4EBFB5F83106 /* SLPopover.h in Headers */ = {isa = PBXBuildFile; fileRef = EA55E15BB59C49C2BFB37090 /* SLPopover.h */; };
+		F8CE8E73B43E44709DFE63E0 /* SLTerminal+ConvenienceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB198FD09CEC46EEBDDDE3C6 /* SLTerminal+ConvenienceFunctions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		FA0BB37430B24155B1A52617 /* Pods-Integration Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9129835A7D0402ABAD745B5 /* Pods-Integration Tests-dummy.m */; };
+		FBB3FEE226C74E75BA633415 /* SLTestController+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 80DEFA5D64D54208886DF5DF /* SLTestController+Internal.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A85438AF2E0E49F1BC5482BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C80D5A699154E2998157682 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BA97745836F4646A114CA3A;
+			remoteInfo = "Pods-Integration Tests-Subliminal";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03A05369BACA45F5B3D8DC44 /* SLTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLTextView.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLTextView.h"; sourceTree = "<group>"; };
+		050293304B864B629868D95E /* SLStaticElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLStaticElement.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLStaticElement.h"; sourceTree = "<group>"; };
+		05AFD3E9FBA84004968D2DD4 /* SLMainThreadRef.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLMainThreadRef.m; path = Sources/Classes/Internal/SLMainThreadRef.m; sourceTree = "<group>"; };
+		0A84BB8C6A5048018EF5E633 /* libPods-Integration Tests-Subliminal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Integration Tests-Subliminal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14043F2BA0BA4B8A95B45B9D /* NSObject+SLAccessibilityHierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+SLAccessibilityHierarchy.h"; path = "Sources/Classes/UIAutomation/User Interface Elements/NSObject+SLAccessibilityHierarchy.h"; sourceTree = "<group>"; };
+		1A94CA6FAF0F44AFABC8C041 /* SLWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLWebView.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLWebView.m"; sourceTree = "<group>"; };
+		222647DDB6324CC2A449A8F6 /* SLGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLGeometry.h; path = Sources/Classes/UIAutomation/SLGeometry.h; sourceTree = "<group>"; };
+		2368764685864A3F9993A1B9 /* SLStringUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLStringUtilities.m; path = Sources/Classes/Internal/Terminal/SLStringUtilities.m; sourceTree = "<group>"; };
+		2A143CE5A62644DAA219E620 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		37600F4C4C104BECB54B635B /* SLTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLTest.h; path = Sources/Classes/SLTest.h; sourceTree = "<group>"; };
+		3BD1FF04761047DE9293E567 /* SLStatusBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLStatusBar.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLStatusBar.h"; sourceTree = "<group>"; };
+		3ED038E86D504C899D5F86FF /* Pods-Integration Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Integration Tests-environment.h"; sourceTree = "<group>"; };
+		4AD775D5163C4521BAF88856 /* SLTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLTextField.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLTextField.m"; sourceTree = "<group>"; };
+		4DF9F68B629B4478874A62E5 /* SLKeyboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLKeyboard.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLKeyboard.m"; sourceTree = "<group>"; };
+		50A1011D86D848668391A65C /* SLTerminal+ConvenienceFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SLTerminal+ConvenienceFunctions.h"; path = "Sources/Classes/Internal/Terminal/SLTerminal+ConvenienceFunctions.h"; sourceTree = "<group>"; };
+		53E0BFF296004512AE61E51A /* SLPopover.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLPopover.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLPopover.m"; sourceTree = "<group>"; };
+		55839C9BBEB64C9C8C91FC43 /* SLTestController+AppHooks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SLTestController+AppHooks.m"; path = "Sources/Classes/SLTestController+AppHooks.m"; sourceTree = "<group>"; };
+		5B64BCED0D9A4FD4AA9E792A /* SLLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLLogger.h; path = Logging/SLLogger.h; sourceTree = "<group>"; };
+		5C3E2D83270344C8B255CE8F /* SLWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLWindow.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLWindow.h"; sourceTree = "<group>"; };
+		5F2929536D7D4EBCAB31D8D8 /* SLMainThreadRef.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLMainThreadRef.h; path = Sources/Classes/Internal/SLMainThreadRef.h; sourceTree = "<group>"; };
+		654CFBD1EFB74FF2AFF9A5E4 /* SLWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLWebView.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLWebView.h"; sourceTree = "<group>"; };
+		6551BA8131C1479B944F1303 /* SLUIAElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLUIAElement.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLUIAElement.m"; sourceTree = "<group>"; };
+		6B698BC54E5E46ADB97AA273 /* libPods-Integration Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Integration Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E9A1BB6D58342DA9D1792B7 /* SLSwitch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLSwitch.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLSwitch.m"; sourceTree = "<group>"; };
+		7753F79AC2204E588937FBB3 /* SLTerminal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLTerminal.h; path = Sources/Classes/Internal/Terminal/SLTerminal.h; sourceTree = "<group>"; };
+		77E02A73C7AA418CAB2783C2 /* SLButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLButton.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLButton.m"; sourceTree = "<group>"; };
+		78CE9CE4BD7440C183D14445 /* SLUIAElement+Subclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SLUIAElement+Subclassing.h"; path = "Sources/Classes/UIAutomation/User Interface Elements/SLUIAElement+Subclassing.h"; sourceTree = "<group>"; };
+		80DEFA5D64D54208886DF5DF /* SLTestController+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SLTestController+Internal.h"; path = "Sources/Classes/Internal/SLTestController+Internal.h"; sourceTree = "<group>"; };
+		832BFD20D58A4192B0E2CA33 /* SLStringUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLStringUtilities.h; path = Sources/Classes/Internal/Terminal/SLStringUtilities.h; sourceTree = "<group>"; };
+		8330E786A3CD4B0891B2EC80 /* SLAccessibilityPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAccessibilityPath.h; path = Sources/Classes/Internal/SLAccessibilityPath.h; sourceTree = "<group>"; };
+		86063B595CE74DBF9D656466 /* Pods-Integration Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Integration Tests.xcconfig"; sourceTree = "<group>"; };
+		88290867B20A48CFAC09666F /* SLTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLTestController.h; path = Sources/Classes/SLTestController.h; sourceTree = "<group>"; };
+		8982B3FA03FA460A949F30A4 /* SLTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLTestController.m; path = Sources/Classes/SLTestController.m; sourceTree = "<group>"; };
+		8A4DB493D8A14142AF7ABD12 /* NSObject+SLVisibility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SLVisibility.m"; path = "Sources/Classes/Internal/NSObject+SLVisibility.m"; sourceTree = "<group>"; };
+		8B4EFBD7C9564C7CADACCEBC /* SLTest+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SLTest+Internal.h"; path = "Sources/Classes/Internal/SLTest+Internal.h"; sourceTree = "<group>"; };
+		928323C159AD4AC2A6ED8124 /* SLTestController+AppHooks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SLTestController+AppHooks.h"; path = "Sources/Classes/SLTestController+AppHooks.h"; sourceTree = "<group>"; };
+		98A1C391E7FA430F803D2DF3 /* NSObject+SLAccessibilityDescription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+SLAccessibilityDescription.h"; path = "Sources/Classes/UIAutomation/User Interface Elements/NSObject+SLAccessibilityDescription.h"; sourceTree = "<group>"; };
+		9E4E8F82742A4E76843D29AE /* SLWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLWindow.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLWindow.m"; sourceTree = "<group>"; };
+		A12A65426805497A909BFF68 /* NSObject+SLAccessibilityHierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SLAccessibilityHierarchy.m"; path = "Sources/Classes/UIAutomation/User Interface Elements/NSObject+SLAccessibilityHierarchy.m"; sourceTree = "<group>"; };
+		A3B7C9E172EC4921A3C3B71D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A4E40EB25AEE4A0A92F5F6EE /* SLDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLDevice.m; path = Sources/Classes/UIAutomation/SLDevice.m; sourceTree = "<group>"; };
+		A9129835A7D0402ABAD745B5 /* Pods-Integration Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Integration Tests-dummy.m"; sourceTree = "<group>"; };
+		AC76A831A3A94FD68797A18E /* NSObject+SLVisibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+SLVisibility.h"; path = "Sources/Classes/Internal/NSObject+SLVisibility.h"; sourceTree = "<group>"; };
+		AE8C38928B094F9E8BC020E0 /* SLAlert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLAlert.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLAlert.h"; sourceTree = "<group>"; };
+		B22DFF9927EE4C71A78EFB8B /* Pods-Integration Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Integration Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B4B6A9452A744BBAB5C36B07 /* UIScrollView+SLProgrammaticScrolling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SLProgrammaticScrolling.h"; path = "Sources/Classes/UIAutomation/User Interface Elements/UIScrollView+SLProgrammaticScrolling.h"; sourceTree = "<group>"; };
+		BA9859AE5911420AAA89F4AA /* SLTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLTextField.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLTextField.h"; sourceTree = "<group>"; };
+		BB10807B738F4B1F8D461D6D /* SLTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLTest.m; path = Sources/Classes/SLTest.m; sourceTree = "<group>"; };
+		BC0846E670294CB682544F39 /* SLLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLLogger.m; path = Logging/SLLogger.m; sourceTree = "<group>"; };
+		BC7138B0B92447BCAA731D6B /* SLAccessibilityPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAccessibilityPath.m; path = Sources/Classes/Internal/SLAccessibilityPath.m; sourceTree = "<group>"; };
+		BFA0128185AE450695092593 /* Pods-Integration Tests-Subliminal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Integration Tests-Subliminal-dummy.m"; sourceTree = "<group>"; };
+		C35124EFC9A645FBB2ACDC06 /* SLAlert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLAlert.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLAlert.m"; sourceTree = "<group>"; };
+		C55FF11EC8F7476A94C0AF01 /* SLStatusBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLStatusBar.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLStatusBar.m"; sourceTree = "<group>"; };
+		C613BC0A7F234188B02EB2AE /* SLSwitch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLSwitch.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLSwitch.h"; sourceTree = "<group>"; };
+		C772D2980C5C4ABDB1FFF53F /* NSObject+SLAccessibilityDescription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SLAccessibilityDescription.m"; path = "Sources/Classes/UIAutomation/User Interface Elements/NSObject+SLAccessibilityDescription.m"; sourceTree = "<group>"; };
+		C8110BA9F486461D85872477 /* UIScrollView+SLProgrammaticScrolling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+SLProgrammaticScrolling.m"; path = "Sources/Classes/UIAutomation/User Interface Elements/UIScrollView+SLProgrammaticScrolling.m"; sourceTree = "<group>"; };
+		C828E3B8D0F140878FC45498 /* SLButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLButton.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLButton.h"; sourceTree = "<group>"; };
+		C88DE11F706C435A9FC39AEB /* SLTerminal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLTerminal.m; path = Sources/Classes/Internal/Terminal/SLTerminal.m; sourceTree = "<group>"; };
+		CE099514FB73491388CD39E6 /* Pods-Integration Tests-Subliminal-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Integration Tests-Subliminal-prefix.pch"; sourceTree = "<group>"; };
+		CFC1712CB50E4F93A4D12115 /* SLElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLElement.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLElement.m"; sourceTree = "<group>"; };
+		D8F46AC71231461EA13E7102 /* SLGeometry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLGeometry.m; path = Sources/Classes/UIAutomation/SLGeometry.m; sourceTree = "<group>"; };
+		D993CCDF391F469DAF49D111 /* Subliminal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Subliminal.h; path = Sources/Subliminal.h; sourceTree = "<group>"; };
+		E05BB1166DDE464E9907A336 /* SLTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLTextView.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLTextView.m"; sourceTree = "<group>"; };
+		E10DD5D515454776997478FE /* Pods-Integration Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Integration Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E31DCFC6371B4505B820CC48 /* SLElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLElement.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLElement.h"; sourceTree = "<group>"; };
+		E7016D20F9F4471A807D6A44 /* Pods-Integration Tests-Subliminal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Integration Tests-Subliminal.xcconfig"; sourceTree = "<group>"; };
+		E74A29E84DC941CD87F90483 /* SLKeyboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLKeyboard.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLKeyboard.h"; sourceTree = "<group>"; };
+		E96CEEB91C8C4E2BA3BDA2F0 /* SLDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLDevice.h; path = Sources/Classes/UIAutomation/SLDevice.h; sourceTree = "<group>"; };
+		EA55E15BB59C49C2BFB37090 /* SLPopover.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLPopover.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLPopover.h"; sourceTree = "<group>"; };
+		EB198FD09CEC46EEBDDDE3C6 /* SLTerminal+ConvenienceFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SLTerminal+ConvenienceFunctions.m"; path = "Sources/Classes/Internal/Terminal/SLTerminal+ConvenienceFunctions.m"; sourceTree = "<group>"; };
+		F07467C89A034971A5004432 /* SLUIAElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLUIAElement.h; path = "Sources/Classes/UIAutomation/User Interface Elements/SLUIAElement.h"; sourceTree = "<group>"; };
+		F35745854B884013975CDBED /* Pods-Integration Tests-Subliminal-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Integration Tests-Subliminal-Private.xcconfig"; sourceTree = "<group>"; };
+		FBA12FCCF5ED4104A05420EF /* SLStaticElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SLStaticElement.m; path = "Sources/Classes/UIAutomation/User Interface Elements/SLStaticElement.m"; sourceTree = "<group>"; };
+		FDD3B1D6F7204EA79A1A0C20 /* Pods-Integration Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Integration Tests-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2802BE87A6B146DD8C2B1982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9973BA577DB4301B7BAFDCB /* Foundation.framework in Frameworks */,
+				0F883E75BA254A85B32D92B6 /* libPods-Integration Tests-Subliminal.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		934EE0198AF74A8FB8CE27CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0DBE0ADE51D4F98AE3BEE23 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08D30C29430D4B34A8FBA980 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B698BC54E5E46ADB97AA273 /* libPods-Integration Tests.a */,
+				0A84BB8C6A5048018EF5E633 /* libPods-Integration Tests-Subliminal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22BA1263E80D406E9B7FBCC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB34F36B01284E3080732FB5 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3623E4FFA16941819866A361 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7016D20F9F4471A807D6A44 /* Pods-Integration Tests-Subliminal.xcconfig */,
+				F35745854B884013975CDBED /* Pods-Integration Tests-Subliminal-Private.xcconfig */,
+				BFA0128185AE450695092593 /* Pods-Integration Tests-Subliminal-dummy.m */,
+				CE099514FB73491388CD39E6 /* Pods-Integration Tests-Subliminal-prefix.pch */,
+			);
+			name = "Support Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		4B6087D767B24A9491855DD5 /* Pods-Integration Tests */ = {
+			isa = PBXGroup;
+			children = (
+				86063B595CE74DBF9D656466 /* Pods-Integration Tests.xcconfig */,
+				E10DD5D515454776997478FE /* Pods-Integration Tests-acknowledgements.markdown */,
+				B22DFF9927EE4C71A78EFB8B /* Pods-Integration Tests-acknowledgements.plist */,
+				A9129835A7D0402ABAD745B5 /* Pods-Integration Tests-dummy.m */,
+				3ED038E86D504C899D5F86FF /* Pods-Integration Tests-environment.h */,
+				FDD3B1D6F7204EA79A1A0C20 /* Pods-Integration Tests-resources.sh */,
+			);
+			name = "Pods-Integration Tests";
+			sourceTree = "<group>";
+		};
+		5C03FCF802C94219B12DC7F9 /* Subliminal */ = {
+			isa = PBXGroup;
+			children = (
+				98A1C391E7FA430F803D2DF3 /* NSObject+SLAccessibilityDescription.h */,
+				C772D2980C5C4ABDB1FFF53F /* NSObject+SLAccessibilityDescription.m */,
+				14043F2BA0BA4B8A95B45B9D /* NSObject+SLAccessibilityHierarchy.h */,
+				A12A65426805497A909BFF68 /* NSObject+SLAccessibilityHierarchy.m */,
+				AC76A831A3A94FD68797A18E /* NSObject+SLVisibility.h */,
+				8A4DB493D8A14142AF7ABD12 /* NSObject+SLVisibility.m */,
+				8330E786A3CD4B0891B2EC80 /* SLAccessibilityPath.h */,
+				BC7138B0B92447BCAA731D6B /* SLAccessibilityPath.m */,
+				AE8C38928B094F9E8BC020E0 /* SLAlert.h */,
+				C35124EFC9A645FBB2ACDC06 /* SLAlert.m */,
+				C828E3B8D0F140878FC45498 /* SLButton.h */,
+				77E02A73C7AA418CAB2783C2 /* SLButton.m */,
+				E96CEEB91C8C4E2BA3BDA2F0 /* SLDevice.h */,
+				A4E40EB25AEE4A0A92F5F6EE /* SLDevice.m */,
+				E31DCFC6371B4505B820CC48 /* SLElement.h */,
+				CFC1712CB50E4F93A4D12115 /* SLElement.m */,
+				222647DDB6324CC2A449A8F6 /* SLGeometry.h */,
+				D8F46AC71231461EA13E7102 /* SLGeometry.m */,
+				E74A29E84DC941CD87F90483 /* SLKeyboard.h */,
+				4DF9F68B629B4478874A62E5 /* SLKeyboard.m */,
+				5B64BCED0D9A4FD4AA9E792A /* SLLogger.h */,
+				BC0846E670294CB682544F39 /* SLLogger.m */,
+				5F2929536D7D4EBCAB31D8D8 /* SLMainThreadRef.h */,
+				05AFD3E9FBA84004968D2DD4 /* SLMainThreadRef.m */,
+				EA55E15BB59C49C2BFB37090 /* SLPopover.h */,
+				53E0BFF296004512AE61E51A /* SLPopover.m */,
+				050293304B864B629868D95E /* SLStaticElement.h */,
+				FBA12FCCF5ED4104A05420EF /* SLStaticElement.m */,
+				3BD1FF04761047DE9293E567 /* SLStatusBar.h */,
+				C55FF11EC8F7476A94C0AF01 /* SLStatusBar.m */,
+				832BFD20D58A4192B0E2CA33 /* SLStringUtilities.h */,
+				2368764685864A3F9993A1B9 /* SLStringUtilities.m */,
+				C613BC0A7F234188B02EB2AE /* SLSwitch.h */,
+				6E9A1BB6D58342DA9D1792B7 /* SLSwitch.m */,
+				7753F79AC2204E588937FBB3 /* SLTerminal.h */,
+				C88DE11F706C435A9FC39AEB /* SLTerminal.m */,
+				50A1011D86D848668391A65C /* SLTerminal+ConvenienceFunctions.h */,
+				EB198FD09CEC46EEBDDDE3C6 /* SLTerminal+ConvenienceFunctions.m */,
+				37600F4C4C104BECB54B635B /* SLTest.h */,
+				BB10807B738F4B1F8D461D6D /* SLTest.m */,
+				8B4EFBD7C9564C7CADACCEBC /* SLTest+Internal.h */,
+				88290867B20A48CFAC09666F /* SLTestController.h */,
+				8982B3FA03FA460A949F30A4 /* SLTestController.m */,
+				928323C159AD4AC2A6ED8124 /* SLTestController+AppHooks.h */,
+				55839C9BBEB64C9C8C91FC43 /* SLTestController+AppHooks.m */,
+				80DEFA5D64D54208886DF5DF /* SLTestController+Internal.h */,
+				BA9859AE5911420AAA89F4AA /* SLTextField.h */,
+				4AD775D5163C4521BAF88856 /* SLTextField.m */,
+				03A05369BACA45F5B3D8DC44 /* SLTextView.h */,
+				E05BB1166DDE464E9907A336 /* SLTextView.m */,
+				F07467C89A034971A5004432 /* SLUIAElement.h */,
+				6551BA8131C1479B944F1303 /* SLUIAElement.m */,
+				78CE9CE4BD7440C183D14445 /* SLUIAElement+Subclassing.h */,
+				654CFBD1EFB74FF2AFF9A5E4 /* SLWebView.h */,
+				1A94CA6FAF0F44AFABC8C041 /* SLWebView.m */,
+				5C3E2D83270344C8B255CE8F /* SLWindow.h */,
+				9E4E8F82742A4E76843D29AE /* SLWindow.m */,
+				D993CCDF391F469DAF49D111 /* Subliminal.h */,
+				B4B6A9452A744BBAB5C36B07 /* UIScrollView+SLProgrammaticScrolling.h */,
+				C8110BA9F486461D85872477 /* UIScrollView+SLProgrammaticScrolling.m */,
+				3623E4FFA16941819866A361 /* Support Files */,
+			);
+			path = Subliminal;
+			sourceTree = "<group>";
+		};
+		7520BA80A24F4F789F11DE80 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B6087D767B24A9491855DD5 /* Pods-Integration Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7920CFAEC09A45D98964AE85 = {
+			isa = PBXGroup;
+			children = (
+				2A143CE5A62644DAA219E620 /* Podfile */,
+				22BA1263E80D406E9B7FBCC2 /* Frameworks */,
+				D61DC5FD453649CC86B90547 /* Pods */,
+				08D30C29430D4B34A8FBA980 /* Products */,
+				7520BA80A24F4F789F11DE80 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		CB34F36B01284E3080732FB5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A3B7C9E172EC4921A3C3B71D /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D61DC5FD453649CC86B90547 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C03FCF802C94219B12DC7F9 /* Subliminal */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2BD45D23B51540809F9BD96F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B32AD82DFD448C48A3E3B97 /* NSObject+SLAccessibilityDescription.h in Headers */,
+				0BD289DD8C714CB890F5AFAD /* NSObject+SLAccessibilityHierarchy.h in Headers */,
+				B9CF19180B1C4CDC851C81C4 /* NSObject+SLVisibility.h in Headers */,
+				3D930BDF37E2420CA700660F /* SLAccessibilityPath.h in Headers */,
+				DAAED3ED127F4F58811FCED1 /* SLAlert.h in Headers */,
+				4487292B692A4062B712BCD5 /* SLButton.h in Headers */,
+				CA625FEBEF244CA1AA6C7AEB /* SLDevice.h in Headers */,
+				2CCFD9E203554830B8DEBE73 /* SLElement.h in Headers */,
+				3E6162E842F04EAB87E7E9BC /* SLGeometry.h in Headers */,
+				8DB26B0D7A874036873D5E33 /* SLKeyboard.h in Headers */,
+				E4808D26BAB14CADA0C809F2 /* SLLogger.h in Headers */,
+				1698AFA154294E6EA95EEF97 /* SLMainThreadRef.h in Headers */,
+				F308BD7CED7C4EBFB5F83106 /* SLPopover.h in Headers */,
+				66638CCDEDCB44D19729EEA6 /* SLStaticElement.h in Headers */,
+				A8D564F1C18B42A2A7EA728B /* SLStatusBar.h in Headers */,
+				E9A236AF527F42BFA63E1C31 /* SLStringUtilities.h in Headers */,
+				E56EEB3E83044BE888FCBEF3 /* SLSwitch.h in Headers */,
+				4D80C695590B4182A7D2D2DD /* SLTerminal+ConvenienceFunctions.h in Headers */,
+				40EBA72D83764DF989217D8D /* SLTerminal.h in Headers */,
+				7C1F0323DDE24A5B8B8F6428 /* SLTest+Internal.h in Headers */,
+				969E523868EB4CF4B13CCC86 /* SLTest.h in Headers */,
+				61C08105709840AB8182E949 /* SLTestController+AppHooks.h in Headers */,
+				FBB3FEE226C74E75BA633415 /* SLTestController+Internal.h in Headers */,
+				C8AC017BD5C5494FB1196058 /* SLTestController.h in Headers */,
+				90A17C3183FC48D9ABDF2DB5 /* SLTextField.h in Headers */,
+				C257C142AFDB42DEABEFECEF /* SLTextView.h in Headers */,
+				6B1DC0A3928E483BA195E67E /* SLUIAElement+Subclassing.h in Headers */,
+				479C5B6D7BDC400FBE15DCB7 /* SLUIAElement.h in Headers */,
+				E4C3EA98480640C4AFE1208A /* SLWebView.h in Headers */,
+				00E2882D08C14F6C94273477 /* SLWindow.h in Headers */,
+				5C234254C7EF4E71A4B10574 /* Subliminal.h in Headers */,
+				5F4685F503C3453BAEEBC040 /* UIScrollView+SLProgrammaticScrolling.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		88635AE206E8498399CC7438 /* Pods-Integration Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C116EA035334657972397D9 /* Build configuration list for PBXNativeTarget "Pods-Integration Tests" */;
+			buildPhases = (
+				E5DB272D531C4FBCB0E3CABB /* Sources */,
+				2802BE87A6B146DD8C2B1982 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6980EE03D5449D4B97F1C4B /* PBXTargetDependency */,
+			);
+			name = "Pods-Integration Tests";
+			productName = "Pods-Integration Tests";
+			productReference = 6B698BC54E5E46ADB97AA273 /* libPods-Integration Tests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8BA97745836F4646A114CA3A /* Pods-Integration Tests-Subliminal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB226E10BF31410DA8C0B411 /* Build configuration list for PBXNativeTarget "Pods-Integration Tests-Subliminal" */;
+			buildPhases = (
+				0F557B8A09E64050BE205B71 /* Sources */,
+				934EE0198AF74A8FB8CE27CB /* Frameworks */,
+				2BD45D23B51540809F9BD96F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Integration Tests-Subliminal";
+			productName = "Pods-Integration Tests-Subliminal";
+			productReference = 0A84BB8C6A5048018EF5E633 /* libPods-Integration Tests-Subliminal.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C80D5A699154E2998157682 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = EF64F22E969346A48449EC8E /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7920CFAEC09A45D98964AE85;
+			productRefGroup = 08D30C29430D4B34A8FBA980 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88635AE206E8498399CC7438 /* Pods-Integration Tests */,
+				8BA97745836F4646A114CA3A /* Pods-Integration Tests-Subliminal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F557B8A09E64050BE205B71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35C59D0B031D4966B8155046 /* NSObject+SLAccessibilityDescription.m in Sources */,
+				BD7E176974AE4AAAA1C9A9E9 /* NSObject+SLAccessibilityHierarchy.m in Sources */,
+				68ACFB53AD3E429D9A47FEDC /* NSObject+SLVisibility.m in Sources */,
+				3B292D3094C147DFA3230B31 /* Pods-Integration Tests-Subliminal-dummy.m in Sources */,
+				9D654EE36F664070BF7A4DF0 /* SLAccessibilityPath.m in Sources */,
+				5B1E30308952466284BEA0C5 /* SLAlert.m in Sources */,
+				E8BE8285C0B24CD6A25FAA12 /* SLButton.m in Sources */,
+				9DF5DD7C38174A7E86F02620 /* SLDevice.m in Sources */,
+				0712C5FD5239465BB20CC87A /* SLElement.m in Sources */,
+				5C71B978210F46FEAD13D35D /* SLGeometry.m in Sources */,
+				9A96E678BEA64FE7BC5CF9F6 /* SLKeyboard.m in Sources */,
+				21307BCACA614E5980BBC7A7 /* SLLogger.m in Sources */,
+				BE1CE662E627403C8ADAED84 /* SLMainThreadRef.m in Sources */,
+				BDC6E4B112534E3FA66DCD3C /* SLPopover.m in Sources */,
+				4BC3B96CBA6647D1B4D4371E /* SLStaticElement.m in Sources */,
+				C038FE0D61DF451F90006362 /* SLStatusBar.m in Sources */,
+				DE374006A8FC462692FF56BC /* SLStringUtilities.m in Sources */,
+				274AD73797CC4C538FD7E539 /* SLSwitch.m in Sources */,
+				F8CE8E73B43E44709DFE63E0 /* SLTerminal+ConvenienceFunctions.m in Sources */,
+				05EDE225022B4144997F019B /* SLTerminal.m in Sources */,
+				B695924DF4864819BF7897B5 /* SLTest.m in Sources */,
+				A688EF30363C4F01B550FF75 /* SLTestController+AppHooks.m in Sources */,
+				DC598E45E48B491880CA398F /* SLTestController.m in Sources */,
+				2EE06BFC382B404DB6D6D99C /* SLTextField.m in Sources */,
+				9CD3087DE1B448F69FBB7A2D /* SLTextView.m in Sources */,
+				0701682E235147479CD19388 /* SLUIAElement.m in Sources */,
+				3BF6732F47A34DA6AEE37F3D /* SLWebView.m in Sources */,
+				BB546CE98FDD4A269F3FC3BB /* SLWindow.m in Sources */,
+				8F789BB8E9B44057B061D57A /* UIScrollView+SLProgrammaticScrolling.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5DB272D531C4FBCB0E3CABB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA0BB37430B24155B1A52617 /* Pods-Integration Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C6980EE03D5449D4B97F1C4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BA97745836F4646A114CA3A /* Pods-Integration Tests-Subliminal */;
+			targetProxy = A85438AF2E0E49F1BC5482BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00F21CF408AC4757941688B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03E2A7E48B9F4430A208B996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		6205BF1B8C1D4D9B9EDDBBA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F35745854B884013975CDBED /* Pods-Integration Tests-Subliminal-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Integration Tests-Subliminal-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6AA6E70BB9214DDAB07B5D32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86063B595CE74DBF9D656466 /* Pods-Integration Tests.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		733B076A18344BB081553A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F35745854B884013975CDBED /* Pods-Integration Tests-Subliminal-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Integration Tests-Subliminal-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDEA1E85BFF04A6C858E0D05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86063B595CE74DBF9D656466 /* Pods-Integration Tests.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C116EA035334657972397D9 /* Build configuration list for PBXNativeTarget "Pods-Integration Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDEA1E85BFF04A6C858E0D05 /* Debug */,
+				6AA6E70BB9214DDAB07B5D32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB226E10BF31410DA8C0B411 /* Build configuration list for PBXNativeTarget "Pods-Integration Tests-Subliminal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6205BF1B8C1D4D9B9EDDBBA7 /* Debug */,
+				733B076A18344BB081553A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF64F22E969346A48449EC8E /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03E2A7E48B9F4430A208B996 /* Debug */,
+				00F21CF408AC4757941688B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C80D5A699154E2998157682 /* Project object */;
+}

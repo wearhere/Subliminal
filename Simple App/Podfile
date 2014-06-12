@@ -1,0 +1,6 @@
+platform :ios, '7.1'
+
+target :'Integration Tests' do
+  pod 'Subliminal'
+end
+
